@@ -35,6 +35,7 @@ public class Piano extends World
      */
     public void act()
     {
+        
         // say "hello" to a different person each second 
         if (frames % 60 == 0)
         {
