@@ -19,6 +19,7 @@ public class Key extends Actor
         {
             // key is down
             setImage("white-key-down.png");
+            play();
         }
         
         else
