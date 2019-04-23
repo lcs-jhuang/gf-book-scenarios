@@ -52,6 +52,20 @@ public class Key extends Actor
             keyAlreadyDown = false;
         }
         
+        // black key
+        if (Greenfoot.isKeyDown(key) && (keyAlreadyDown = false))
+        {
+            // key is down
+            setImage("black-key-down.png");
+            play();
+            keyAlreadyDown = true;
+        }
+        if (keyAlreadyDown == true && !Greenfoot.isKeyDown(key))
+        {
+            // key is up
+            setImage("black-key.png");  
+            keyAlreadyDown = false;
+        }
     }
     
     /**

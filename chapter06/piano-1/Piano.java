@@ -15,15 +15,17 @@ public class Piano extends World
     int frames;
 
     // create the array
-    String[] peopleInClass = {"Julio", "Liam", "Dima", "Osman", "Simon", "Eric", "Phillip", 
-            "Joven", "Joe", "Gordon", "Jieun", "Selena", "Jason", "Sam", "Jeff"};
-    
+    //String[] peopleInClass = {"Julio", "Liam", "Dima", "Osman", "Simon", "Eric", "Phillip", 
+    //        "Joven", "Joe", "Gordon", "Jieun", "Selena", "Jason", "Sam", "Jeff"};
+
     // creaate two arrays
     // first array tracks the keyboard keys that we will use for white piano keys
     String[] whiteKeys = {"a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\\"};
     // second array tracks the sound files for each note
     String[] whiteNotes = {"3c", "3d", "3e", "3f", "3g", "3a", "3b", "3c", "3d", "3e", "3f", "3g"};
-    
+
+    String[] blackKeys = {"w", "e", "", "t", "y", "u", "", "o", "p", "", "]", ""};
+    String[] blackNotes = {"3c#", "3d#", "", "3f#", "3g#", "3a#", "", "4c#", "4d#", "", "4f#", ""};
     /**
      * Make the piano.
      */
@@ -48,7 +50,7 @@ public class Piano extends World
         {
             // only show a message when in the bounds of the array
             showText("Array index is: " + position, 400, 250);
-            
+
             // create an object to add to the world
             Key aKey = new Key(whiteKeys[position], whiteNotes[position]);
             // add the object to the world 
@@ -65,5 +67,5 @@ public class Piano extends World
 
         // show frames
         //showText("" + frames, 100, 100);
-    }
+}
 }
