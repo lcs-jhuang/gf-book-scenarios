@@ -52,7 +52,7 @@ public class Piano extends World
             showText("Array index is: " + position, 400, 250);
 
             // create an object to add to the world
-            Key aKey = new Key(whiteKeys[position], whiteNotes[position]);
+            Key aKey = new Key(whiteKeys[position], whiteNotes[position], true);
             // add the object to the world 
             addObject(aKey, 54 + position * 63, 140);
             // only say "hello" when in the bounds of the array

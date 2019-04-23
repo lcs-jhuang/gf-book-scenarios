@@ -12,11 +12,13 @@ public class Key extends Actor
     // will contain the key and sound file that ehis instance of the class will play
     private String key;
     private String sound;
+    // check if it is a white key
+    private boolean isKeyWhite;
 
     /**
      * Create a new key.
      */
-    public Key(String keyName, String soundFile)
+    public Key(String keyName, String soundFile, boolean keyWhite)
     {
         // no key has been pressed
         keyAlreadyDown = false;
@@ -24,6 +26,7 @@ public class Key extends Actor
         // set the instance variables using the parameters
         key = keyName;
         sound = soundFile;
+        isKeyWhite = keyWhite;
     }
 
     /**
