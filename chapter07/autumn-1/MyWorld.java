@@ -23,5 +23,9 @@ public class MyWorld extends World
     private void setUp()
     {
         addObject(new Block(), 300, 200);
+        for (int i = 1; i <= 18; i +=1)
+        {
+            addObject(new Leaf(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400));            
+        }
     }
 }
