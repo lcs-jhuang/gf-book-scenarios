@@ -1,4 +1,6 @@
 import greenfoot.*;
+// In order to use a list, we must import it
+import java.util.List;
 
 /**
  * A block that bounces back and forth across the screen.
@@ -18,6 +20,29 @@ public class Block extends Actor
         move();
         checkEdge();
         checkMouseClick();
+        checkForLeafCollision();
+    }
+    
+    
+    /**
+     * remove a Leaf object if we are intersectng with it.
+     */
+    private void checkForLeafCollision()
+    {
+        // get an object reference to a single leaf from any leaf objects we are currently intersecting
+        // by placing a type in brackets before the call to getOneIntersectingObject
+        // we ***cast*** (or force) the type to change from Actor to Leaf
+        Leaf someLeaf = (Leaf) getOneIntersectingObject(Leaf.class);
+        
+        // check that the someLeaf object actully has a reference to an object
+        // if it is a null, that means there was no leaf intersecting the Block this time around
+        if (someLeaf != null)
+        {
+            // someLeaf is NOT null, remove
+            World myWorld = getWorld();
+            myWorld.removeObject(someLeaf);
+        }
+        
     }
     
     /**
@@ -50,9 +75,15 @@ public class Block extends Actor
      */
     private void checkMouseClick()
     {
-        if (Greenfoot.mouseClicked(null)) 
+        // when null is the argument, Greenfoot responds to a mouse click anywhere on screen 
+        // when this is the argument, Greenfoot responds to a mouse click only on Block object
+        if (Greenfoot.mouseClicked(this)) 
         {
-            // do this when the mouse is clicked. currently: nothing.
+            // 1. get an object reference to the world 
+            World myWorld = getWorld();
+            
+            // make a messge show on screen when the mouse is clicked
+            myWorld.showText("mouse was clicked", 200, 200);
         }
     }
     
